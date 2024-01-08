@@ -7,6 +7,10 @@
 
 This repository contains descriptive analysis using *Looker Studio* of dining satisfaction based on various factors as depicted in the provided dashboard, as well as predictive analysis using *BigQuery ML* to predict whether a customer will be satisfied or not based on their information and survey ratings. The dashboard is divided into two pages: Survey Ratings and Statistical Analysis.
 
+<br>
+
+Link to Dashboard: https://lookerstudio.google.com/reporting/5d9fd4fa-455c-4d3c-a817-c5b43826fe06
+
  <br>
   <br>
 
