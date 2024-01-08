@@ -14,5 +14,5 @@ This repository contains an analysis of dining satisfaction based on various fac
 
 ## Installation
 ```bash
-git clone https://github.com/username/dining-satisfaction-dashboard-analysis.git
-cd dining-satisfaction-dashboard-analysis
+git clone https://github.com/Ibrahim-Izz/Dining-Satisfaction-Analysis.git
+cd https://github.com/Ibrahim-Izz/Dining-Satisfaction-Analysis
