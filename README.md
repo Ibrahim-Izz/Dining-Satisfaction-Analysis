@@ -4,33 +4,41 @@
 This repository contains descriptive analysis using *Looker Studio* of dining satisfaction based on various factors as depicted in the provided dashboard, as well as predictive analysis using *BigQuery ML* to predict whether a customer will be satisfied or not based on their information and survey ratings. The dashboard is divided into two pages: Survey Ratings and Statistical Analysis.
 
 ### Page 1: Survey Ratings
-Contains visual representation and scores of:
+/path/to/1.jpg
 
-* Satisfaction: Dining satisfaction level (Satisfaction, neutral, or dissatisfaction)
-* Age: The actual age of the diners
-* Gender: Gender of the diners (Female, Male)
-* Type of Dining: Purpose of the visit to the restaurant (Personal Dining, Business Dining)
-* Ambience: Dining ambiance in the restaurant.
-* Customer Type: The customer type (Loyal customer, disloyal customer)
-* Distance from Home: Distance traveled to reach the restaurant
-* WiFi Service: Satisfaction level of the restaurant's WiFi service
-* Ease of Booking: Satisfaction level of the reservation process
-* Table Service: Satisfaction level of table service
-* Online Reservation Support: Satisfaction level of online reservation support
-* Entertainment Options: Satisfaction level of available entertainment options (Live Music, Events, Games, etc.)
-* Online Booking Ease: Satisfaction level of the booking process (Reservation Process, Waiting Time, etc.)
-* Space Between Tables: Satisfaction level of the space between dining tables
-* Baggage Handling: Satisfaction level of baggage handling (Coat Check, Personal Items Handling, etc.)
-* Check-in Service: Satisfaction level of the check-in service (Reception, Reservation Confirmation, etc.)
-* Cleanliness: Satisfaction level of cleanliness in the restaurant
-* Online Menu Access: Satisfaction level of online menu access (User-Friendly, Detailed, etc.)
-* Departure Delay in Minutes: Minutes delayed when the diners had to wait for a table
-* Arrival Delay in Minutes: Minutes delayed when the diners had to wait for food
+Contains customer and dining information, as well as visual representation and scores (out of 5) of different survey metrics and their total average for the selected filters and ranges like:
+
+* Baggage Handling
+* Check-in Service
+* Cleanliness
+* Ease of Booking
+* Entertainment Options
+* Food and Drink Quality
+* Online Booking Ease
+* Online Menu Access
+* Online Support
+* Reservation Convenience
+* Seating Location
+* Space Between Tables
+* Table Service
+* Wait Time for a Table
+* WiFi Service
+
+We see how changing customer information and the range of these scores affect the number of total satisfied and dissatisfied people.
+
+We can limit the range of the score or slide bar to single value and see the result of exact record with unique combination, an whether they are satisfied or not.
 
 ### Page 2: Statistical Analysis
-Includes:
+/path/to/2.jpg
 
-Satisfaction Percentage by Age Group, Gender, Customer Type, Type of Dining, and Ambiance.
-Food and Dining Experience Ratings.
-Ease of Access and Entertainment Services Rating.
-How Waiting Time Changes with Ambiance, Customer Type, Age Group, and how it Affects Customer Satisfaction.
+Includes some charts breaking down each survey metric and customer information by satisfaction level.
+
+There are 4 charts:
+
+* Satisfaction Percentage by Age Group, Gender, Customer Type, Type of Dining, and Ambiance.
+* Food and Dining Experience Ratings.
+* Ease of Access and Entertainment Services Rating.
+* How Waiting Time Changes with Ambiance, Customer Type, Age Group, and how it Affects Customer Satisfaction.
+
+Each chart has multiple Drill Down options to navigate between, and the ability to sort axes values by each axis label asc. or desc.
+
