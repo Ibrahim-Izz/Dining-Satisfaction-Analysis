@@ -7,9 +7,10 @@
 
 This repository contains descriptive analysis using *Looker Studio* of dining satisfaction based on various factors as depicted in the provided dashboard, as well as predictive analysis using *BigQuery ML* to predict whether a customer will be satisfied or not based on their information and survey ratings. The dashboard is divided into two pages: Survey Ratings and Statistical Analysis.
 
+ <br>
+  <br>
 
-
-# Looker Dashboard
+# 1. Looker Dashboard
 ### Page 1: Survey Ratings
 ![Page 1](https://github.com/Ibrahim-Izz/Dining-Satisfaction-Analysis/assets/104682497/5473cf65-41f8-4baf-8d3f-ea79992c23f7)
 
@@ -53,9 +54,10 @@ You can interact with the dashboard at: https://lookerstudio.google.com/reportin
 Note that the dashboard in dynamic and cross filtered. It can also take some time to render at first, just warming up, and heavily depends on your machine capabilities.
 
 
+ <br>
+  <br>
 
-
-# BigQuery ML Logistic Regression Binary Classification Model
+# 2. BigQuery ML Logistic Regression Binary Classification Model
 First things first: we derived some new columns in the ETL stage earlier in Power Query to help us for both analysis and prediction. These columns are:
 * Age Group: Assigning an age group to the customer (21-25, 26-30, etc)
 * Satisfaction Level Boolean: Representing "Satisfied" as *True* and "Neutral or Dissatisfied" as *False*
@@ -135,9 +137,10 @@ FROM ML.PREDICT(MODEL<Mode>,
 
 ![Confusion Matrix](https://github.com/Ibrahim-Izz/Dining-Satisfaction-Analysis/assets/104682497/abd50af7-1efa-4000-af4b-0a4502af95d1)
 
+ <br>
+  <br>
 
-
-# Some Thoughts
+# 3. Some Thoughts
 * Doing some ETL before loading our data into the data warehouse in benefial. Often times we want to derive new columns or change types of some fields that can help us analyse and predict better. In this project, we used Power BI Power Query for the job.
 * Clustering ages by age groups is often a best practice to ease analytics.
 * Deriving a boolean field out of 2-value string categorical field is often a best practice to ease analytics.
@@ -145,12 +148,3 @@ FROM ML.PREDICT(MODEL<Mode>,
 * For this project, we removed all records having one or more 0 or non applicable rating to ease analytics and deliver more accurate models and assure data integrity. Since they werer only 7.8% of total dataset, the difference it will make is slight. However, if this percentage increased significantly, we must reconsider having them into our OLAP model, amd do necessary manuevers around nulls and 0s to ensure data integrity and accuracy.
 * For the our classification model to run on user input data, it must be deployed using some APIs and pipelines. MLOps engineers know it better.
 * Changing classification function from logistic regression to other complex and advanced functions like random forests or SVM, and tuning its hyperparameters, might slightly improve our model accuracy.
-
-
-
-
-
-
-
-
-
