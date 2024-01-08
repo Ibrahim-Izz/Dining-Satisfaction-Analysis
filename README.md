@@ -152,3 +152,6 @@ FROM ML.PREDICT(MODEL<Mode>,
 * For this project, we removed all records having one or more 0 or non applicable rating to ease analytics and deliver more accurate models and assure data integrity. Since they werer only 7.8% of total dataset, the difference it will make is slight. However, if this percentage increased significantly, we must reconsider having them into our OLAP model, amd do necessary manuevers around nulls and 0s to ensure data integrity and accuracy.
 * For the our classification model to run on user input data, it must be deployed using some APIs and pipelines. MLOps engineers know it better.
 * Changing classification function from logistic regression to other complex and advanced functions like random forests or SVM, and tuning its hyperparameters, might slightly improve our model accuracy.
+
+Example of a possible Deployment Pipeline:
+![2024-01-08 08_34_29-Alessandro Marrandino - Machine Learning with BigQuery ML_ Create, execute, and ](https://github.com/Ibrahim-Izz/Dining-Satisfaction-Analysis/assets/104682497/aab41936-c7ed-45e9-acf0-d0873686cbed)
