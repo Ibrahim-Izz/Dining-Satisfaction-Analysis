@@ -158,7 +158,6 @@ Example of a possible Deployment Pipeline:
 
 <br>
 <br>
-<br>
 
 
 
