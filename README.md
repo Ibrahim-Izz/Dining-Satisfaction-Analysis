@@ -120,7 +120,7 @@ WHERE
 
 ```sql
 SELECT *
-FROM ML.PREDICT(MODEL<Mode>,
+FROM ML.PREDICT(MODEL<Model>,
 (
     SELECT 
     *
@@ -165,13 +165,13 @@ Example of a possible Deployment Pipeline:
 We've retrained our model using XGBoost Boosted Trees. Believe it or not, accuracy jumped to actual 1.00 (100%)!
 
 ```sql
-CREATE OR REPLACE MODEL `natural-axiom-410319.NEW.model3`
+CREATE OR REPLACE MODEL <Model>
 OPTIONS(
 MODEL_TYPE='BOOSTED_TREE_CLASSIFIER', BOOSTER_TYPE = 'GBTREE', NUM_PARALLEL_TREE = 1, MAX_ITERATIONS = 50, TREE_METHOD = 'HIST', EARLY_STOP = FALSE, AUTO_CLASS_WEIGHTS=TRUE) AS
 SELECT 
     * EXCEPT(dataframe), target as label
 FROM 
-    `natural-axiom-410319.NEW.satisfaction3`
+    <Table1>
 WHERE 
     dataframe = 'training'
 ```
