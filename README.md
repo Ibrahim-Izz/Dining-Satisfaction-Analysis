@@ -155,3 +155,30 @@ FROM ML.PREDICT(MODEL<Mode>,
 
 Example of a possible Deployment Pipeline:
 ![2024-01-08 08_34_29-Alessandro Marrandino - Machine Learning with BigQuery ML_ Create, execute, and ](https://github.com/Ibrahim-Izz/Dining-Satisfaction-Analysis/assets/104682497/aab41936-c7ed-45e9-acf0-d0873686cbed)
+
+<br>
+<br>
+<br>
+
+
+
+# Major Update
+We've retrained our model using XGBoost Boosted Trees. Believe it or not, accuracy jumped to actual 1.00 (100%)!
+
+```sql
+CREATE OR REPLACE MODEL `natural-axiom-410319.NEW.model3`
+OPTIONS(
+MODEL_TYPE='BOOSTED_TREE_CLASSIFIER', BOOSTER_TYPE = 'GBTREE', NUM_PARALLEL_TREE = 1, MAX_ITERATIONS = 50, TREE_METHOD = 'HIST', EARLY_STOP = FALSE, AUTO_CLASS_WEIGHTS=TRUE) AS
+SELECT 
+    * EXCEPT(dataframe), target as label
+FROM 
+    `natural-axiom-410319.NEW.satisfaction3`
+WHERE 
+    dataframe = 'training'
+```
+
+![2024-01-10 06_51_29-BigQuery – My First Project – Google Cloud console](https://github.com/Ibrahim-Izz/Dining-Satisfaction-Analysis/assets/104682497/cf686505-df1b-472d-991b-2a221a8e7581)
+
+<br>
+
+![2024-01-10 06_55_30-BigQuery – My First Project – Google Cloud console](https://github.com/Ibrahim-Izz/Dining-Satisfaction-Analysis/assets/104682497/c2c41cdb-28b1-4f65-9bf7-dcdaa21ee81f)
