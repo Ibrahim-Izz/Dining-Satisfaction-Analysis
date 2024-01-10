@@ -181,3 +181,8 @@ WHERE
 <br>
 
 ![2024-01-10 09_07_57-BigQuery – My First Project – Google Cloud console](https://github.com/Ibrahim-Izz/Dining-Satisfaction-Analysis/assets/104682497/914307c7-fefb-4c36-a92c-38e8b87fc3c5)
+
+<br>
+
+## Metrics Correlation Coefficients with Satisfaction
+![2024-01-10 16_19_23-bquxjob_6b491e85_18cf3b94d79 - Excel](https://github.com/Ibrahim-Izz/Dining-Satisfaction-Analysis/assets/104682497/66b8dd84-4bd9-4e84-907f-630560691727)
