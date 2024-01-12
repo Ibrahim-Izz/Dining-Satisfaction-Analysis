@@ -161,28 +161,39 @@ Example of a possible Deployment Pipeline:
 
 
 
-# Major Update
-We've retrained our model using XGBoost Boosted Trees. Believe it or not, accuracy jumped to actual 1.00 (100%)!
+# Update 1: XGBoost Classifier
+We've retrained our model using XGBoost Boosted Trees. Accuracy jumped to 95.25%, and still under tuning and improvement.
 
 ```sql
 CREATE OR REPLACE MODEL <Model>
 OPTIONS(
-MODEL_TYPE='BOOSTED_TREE_CLASSIFIER', BOOSTER_TYPE = 'GBTREE', NUM_PARALLEL_TREE = 1, MAX_ITERATIONS = 50, TREE_METHOD = 'HIST', EARLY_STOP = FALSE, AUTO_CLASS_WEIGHTS=TRUE) AS
+MODEL_TYPE='BOOSTED_TREE_CLASSIFIER', INPUT_LABEL_COLS=['target'], BOOSTER_TYPE = 'DART', TREE_METHOD = 'HIST', EARLY_STOP = FALSE, HPARAM_TUNING_OBJECTIVES =['PRECISION'], ENABLE_GLOBAL_EXPLAIN=TRUE, NUM_PARALLEL_TREE = 2, EARLY_STOP = FALSE, AUTO_CLASS_WEIGHTS=TRUE,
+MAX_TREE_DEPTH = HPARAM_CANDIDATES ([3,5,7,9,15,20]),
+MIN_TREE_CHILD_WEIGHT = HPARAM_CANDIDATES ([1,3,5,7]),
+LEARN_RATE = HPARAM_RANGE (0.0 ,.5),
+NUM_TRIALS = 100) AS
 SELECT 
-    * EXCEPT(dataframe), target as label
+    * EXCEPT(dataframe)
 FROM 
     <Table1>
 WHERE 
     dataframe = 'training'
 ```
 
-![2024-01-10 06_51_29-BigQuery – My First Project – Google Cloud console](https://github.com/Ibrahim-Izz/Dining-Satisfaction-Analysis/assets/104682497/cf686505-df1b-472d-991b-2a221a8e7581)
+## Training Loss by Trials
+![2024-01-12 16_58_03-BigQuery – My First Project – Google Cloud console](https://github.com/Ibrahim-Izz/Dining-Satisfaction-Analysis/assets/104682497/eb28ee43-5077-45f4-ad40-b50212f786d5)
+<br>
+Note that for more trials, loss reduces.
 
+## Trial 10 Evaluation Metrics
+![Trial 10 Evaluation](https://github.com/Ibrahim-Izz/Dining-Satisfaction-Analysis/assets/104682497/bbc6005b-7352-4e29-bfec-9cf6d3ab1a6a)
+<br>
+Note that for more trials, accuracy increases.
+
+## Top 10 Contributed Features Scores
+![Import Score](https://github.com/Ibrahim-Izz/Dining-Satisfaction-Analysis/assets/104682497/937348df-10b7-4939-aa2e-2cfe42edcc49)
+Note that we can drop the least contributed features to improve results. We can also increase the number of iterations and trials and see if that works out for better accuracy. (*in progress, stay tuned*)
 <br>
 
-![2024-01-10 09_07_57-BigQuery – My First Project – Google Cloud console](https://github.com/Ibrahim-Izz/Dining-Satisfaction-Analysis/assets/104682497/914307c7-fefb-4c36-a92c-38e8b87fc3c5)
 
-<br>
 
-## Metrics Correlation Coefficients with Satisfaction
-![2024-01-10 16_19_23-bquxjob_6b491e85_18cf3b94d79 - Excel](https://github.com/Ibrahim-Izz/Dining-Satisfaction-Analysis/assets/104682497/66b8dd84-4bd9-4e84-907f-630560691727)
